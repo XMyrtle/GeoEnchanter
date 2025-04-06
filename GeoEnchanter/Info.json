@@ -1,0 +1,12 @@
+﻿{
+  "Id": "GeoEnchanter",
+  "DisplayName": "GeoEnchanter",
+  "Author": "",
+  "Version": "1.1.0",
+  "ManagerVersion": "0.27.11",
+  "Requirements": [],
+  "AssemblyName": "GeoEnchanter.dll",
+  "EntryMethod": "GeoEnchanter.Main.Load",
+  "HomePage": "",
+  "Repository": ""
+}
