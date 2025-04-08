@@ -314,14 +314,14 @@
     },
     {
         "Key": "WisdomOfMind_Desc",
-        "deDE": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus",
-        "enGB": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus",
-        "esES": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus",
-        "frFR": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus",
-        "itIT": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus",
-        "ptBR": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus",
-        "ruRU": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus",
-        "zhCN": "You add 1.5 your Wisdom mofifier to your Intelligence and Charisma as an Inherent bonus"
+        "deDE": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses",
+        "enGB": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses",
+        "esES": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses",
+        "frFR": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses",
+        "itIT": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses",
+        "ptBR": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses",
+        "ruRU": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses",
+        "zhCN": "You add 1.5 times your Wisdom mofifier to your Intelligence and Charisma as Competences bonuses"
     },
     {
         "Key": "AzataIncorporate_Name",

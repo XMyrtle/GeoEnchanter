@@ -1,8 +1,15 @@
 ﻿using HarmonyLib;
 using System;
 using UnityModManagerNet;
+using JetBrains.Annotations;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints.JsonSystem;
+using Kingmaker.UnitLogic;
+using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.Class.LevelUp.Actions;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.Enums;
+
 namespace GeoEnchanter
 {
     public static class Main
@@ -164,6 +171,26 @@ namespace GeoEnchanter
                 Progression.GeoOverflow.Progression.Configure();
             }
         }
+        [HarmonyPatch(typeof(LevelUpHelper))]
+        static class LevelUpHelper_Patch
+        {
+            [HarmonyPatch(nameof(LevelUpHelper.GetIntelligenceSkillPoints)), HarmonyPrefix]
+            static bool Prefix([NotNull] UnitDescriptor unit, int level, ref int __result)
+            {
+                static bool FilterIsRacialOrInherentOrSelfBonus(ModifiableValue.Modifier m) => m.ModDescriptor == ModifierDescriptor.Racial || m.ModDescriptor == ModifierDescriptor.Inherent || (m.ModDescriptor == ModifierDescriptor.Competence && !m.IsTempBuff() && m.ItemSource == null);
+                int baseValue = unit.Stats.Intelligence.CalculateBaseValue(unit.Stats.Intelligence.BaseValue);
+                int value = unit.Stats.Intelligence.ApplyModifiersFiltered(baseValue, FilterIsRacialOrInherentOrSelfBonus) / 2 - 5;
+                int num = Math.Abs(value);
+                int num2 = Math.Sign(value);
+                if (level % 2 == 1)
+                {
+                    __result = (num + 1) / 2 * num2;
+                }
+                __result = num / 2 * num2;
 
+                return false;
+            }
+
+        }
     }
 }
