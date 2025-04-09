@@ -185,9 +185,9 @@ namespace GeoEnchanter
                 if (level % 2 == 1)
                 {
                     __result = (num + 1) / 2 * num2;
+                    return false;
                 }
                 __result = num / 2 * num2;
-
                 return false;
             }
 
