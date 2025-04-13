@@ -11,30 +11,27 @@ namespace Archetypes.GeoEnchanter.GeoOverflow
 
         public static void Configure()
         {
-            var DescriptorType = Kingmaker.Enums.ModifierDescriptor.Polymorph;
-            var Buff = BuffConfigurator.New(name: BuffName, Guids.GeoOverflowLevel06WisConBuff);
+            const Kingmaker.Enums.ModifierDescriptor DescriptorType = Kingmaker.Enums.ModifierDescriptor.Alchemical;
 
-            Buff.AddStatBonus(stat: Kingmaker.EntitySystem.Stats.StatType.Wisdom,
+            BuffConfigurator.New(name: BuffName, Guids.GeoOverflowLevel06WisConBuff)
+            .AddStatBonus(stat: Kingmaker.EntitySystem.Stats.StatType.Wisdom,
                                   descriptor: DescriptorType,
-                                  value: 2);
-            Buff.AddStatBonus(stat: Kingmaker.EntitySystem.Stats.StatType.Constitution,
+                                  value: 2)
+            .AddStatBonus(stat: Kingmaker.EntitySystem.Stats.StatType.Constitution,
                               descriptor: DescriptorType,
-                              value: 2);
-            Buff.AddPolymorphBonuses();
-            Buff.SetIcon(Icons.GeoKineticistIconRef.GeoOverflowWisCon);
-            Buff.SetDisplayName("GeoOverflow06_Name");
-            Buff.SetDescription("GeoOverflow06WisCon_Desc");
-
-
-            Buff.SetIsClassFeature(true);
-            Buff.AddToFlags(flags: [/*BlueprintBuff.Flags.HiddenInUi,*/
-                                    BlueprintBuff.Flags.StayOnDeath]);
-            Buff.SetRanks(0);
-            Buff.SetStacking(StackingType.Replace);
-            Buff.SetTickEachSecond(false);
-            Buff.SetFrequency(DurationRate.Rounds);
-
-            Buff.Configure();
+                              value: 2)
+            .AddPolymorphBonuses()
+            .SetIcon(Icons.GeoKineticistIconRef.GeoOverflowWisCon)
+            .SetDisplayName("GeoOverflow06_Name")
+            .SetDescription("GeoOverflow06WisCon_Desc")
+            .SetIsClassFeature(true)
+            .AddToFlags(flags: [/*BlueprintBuff.Flags.HiddenInUi,*/
+                                BlueprintBuff.Flags.StayOnDeath])
+            .SetRanks(0)
+            .SetStacking(StackingType.Replace)
+            .SetTickEachSecond(false)
+            .SetFrequency(DurationRate.Rounds)
+            .Configure();
         }
 
     }

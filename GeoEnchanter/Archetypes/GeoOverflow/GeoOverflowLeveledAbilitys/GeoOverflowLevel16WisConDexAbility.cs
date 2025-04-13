@@ -9,13 +9,16 @@ namespace Ability.Overflow
         private static readonly string AbilityName = "GeoOverflowLevel16WisConDexAbility";
         public static void Configure()
         {
-            var Ability = ActivatableAbilityConfigurator.New(name: AbilityName, guid: Guids.GeoOverflowLevel16WisConDexAbility);
-            Ability.SetIcon(Icons.GeoKineticistIconRef.GeoOverflowWisCon);
-            Ability.SetDisplayName("GeoOverflow16_Name");
-            Ability.SetDescription("GeoOverflow16WisConDex_Desc");
-            Ability.SetGroup(ActivatableAbilityGroup.ElementalOverflow);
-            Ability.SetBuff(buff: Guids.GeoOverflowLevel16WisConDexBuff);
-            Ability.Configure();
+            ActivatableAbilityConfigurator.New(name: AbilityName, guid: Guids.GeoOverflowLevel16WisConDexAbility)
+            .SetIcon(Icons.GeoKineticistIconRef.GeoOverflowWisCon)
+            .SetDisplayName("GeoOverflow16_Name")
+            .SetDescription("GeoOverflow16WisConDex_Desc")
+            .SetGroup(ActivatableAbilityGroup.ElementalOverflow)
+            .SetBuff(buff: Guids.GeoOverflowLevel16WisConDexBuff)
+            .SetDeactivateImmediately(true)
+            .SetActivationType(AbilityActivationType.WithUnitCommand)
+            .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+            .Configure();
         }
 
     }
